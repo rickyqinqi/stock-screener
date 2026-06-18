@@ -1,0 +1,70 @@
+name: Daily Stock Screener
+
+on:
+  schedule:
+    # 北京时间每天 18:00 (UTC 10:00)，收盘后有充足数据
+    - cron: '0 10 * * 1-5'
+  # 也支持手动触发
+  workflow_dispatch:
+    inputs:
+      date:
+        description: '指定日期 (YYYY-MM-DD)，留空则自动使用昨天'
+        required: false
+        default: ''
+
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Set date
+        id: date
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            echo "DATE=${{ github.event.inputs.date }}" >> $GITHUB_OUTPUT
+          else
+            # 默认使用昨天日期（北京时间）
+            echo "DATE=$(TZ='Asia/Shanghai' date -d 'yesterday' +%Y-%m-%d)" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run stock screener
+        run: |
+          node scripts/screen.js --date ${{ steps.date.outputs.DATE }}
+        timeout-minutes: 30
+
+      - name: Commit and push results
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          
+          # 检查是否有变更
+          if git diff --quiet && git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          
+          git add docs/data/
+          git commit -m "📊 自动刷新: ${{ steps.date.outputs.DATE }} 筛选结果"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Trigger Pages rebuild
+        run: |
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/repos/${{ github.repository }}/pages/builds"
+        continue-on-error: true

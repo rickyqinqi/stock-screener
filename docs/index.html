@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>深证A股 · 均线多头排列筛选</title>
+  <style>
+    :root {
+      --bg: #f8f9fa;
+      --card-bg: #ffffff;
+      --text: #212529;
+      --text-secondary: #6c757d;
+      --border: #dee2e6;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --red: #dc2626;
+      --green: #16a34a;
+      --tag-bg: #eff6ff;
+      --tag-text: #2563eb;
+      --shadow: 0 1px 3px rgba(0,0,0,0.08);
+      --radius: 10px;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px 24px;
+    }
+    
+    /* Header */
+    .header {
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    
+    .header h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .header h1 .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    
+    .date-badge {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    
+    .refresh-btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    
+    .refresh-btn:hover { background: var(--accent-hover); }
+    .refresh-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    
+    select {
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.875rem;
+      background: var(--card-bg);
+      color: var(--text);
+      cursor: pointer;
+      min-width: 140px;
+    }
+    
+    /* Stats bar */
+    .stats-bar {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    
+    .stat-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      box-shadow: var(--shadow);
+      flex: 1;
+      min-width: 150px;
+      text-align: center;
+    }
+    
+    .stat-card .stat-value {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    
+    .stat-card .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+    
+    /* Market sections */
+    .market-section {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+    
+    .market-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      user-select: none;
+    }
+    
+    .market-header:hover { background: #f8fafc; }
+    
+    .market-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .market-count {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    
+    .market-toggle {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      transition: transform 0.2s;
+    }
+    
+    .market-section.collapsed .market-toggle {
+      transform: rotate(-90deg);
+    }
+    
+    .market-section.collapsed .table-wrapper {
+      display: none;
+    }
+    
+    /* Table */
+    .table-wrapper {
+      overflow-x: auto;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+    
+    thead th {
+      background: #f8fafc;
+      padding: 12px 14px;
+      text-align: left;
+      font-weight: 600;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 2px solid var(--border);
+      white-space: nowrap;
+      position: sticky;
+      top: 0;
+    }
+    
+    tbody td {
+      padding: 12px 14px;
+      border-bottom: 1px solid #f1f5f9;
+      white-space: nowrap;
+    }
+    
+    tbody tr:hover { background: #f8fafc; }
+    
+    .code-cell {
+      font-family: 'SF Mono', 'Consolas', monospace;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    
+    .name-cell { font-weight: 500; }
+    
+    .positive { color: var(--red); }
+    .negative { color: var(--green); }
+    
+    .price-cell { font-weight: 600; }
+    
+    /* Empty state */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-secondary);
+    }
+    
+    .empty-state .icon { font-size: 3rem; margin-bottom: 12px; }
+    
+    /* Loading */
+    .loading {
+      text-align: center;
+      padding: 40px;
+      color: var(--text-secondary);
+    }
+    
+    .spinner {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    
+    @keyframes spin { to { transform: rotate(360deg); } }
+    
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 24px;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+    }
+    
+    .footer a { color: var(--accent); text-decoration: none; }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container { padding: 12px; }
+      .header-inner { padding: 0 12px; }
+      .stat-card { min-width: 120px; padding: 12px; }
+      .stat-card .stat-value { font-size: 1.3rem; }
+      table { font-size: 0.8rem; }
+    }
+    
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #1e293b;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s;
+      z-index: 1000;
+      pointer-events: none;
+    }
+    
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .disclaimer {
+      text-align: center;
+      padding: 16px;
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+      border-top: 1px solid var(--border);
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-inner">
+      <h1>
+        <span class="dot"></span>
+        深证A股 · 均线多头排列筛选
+      </h1>
+      <div class="header-controls">
+        <select id="dateSelect" onchange="onDateChange()">
+          <option value="latest">最新数据</option>
+        </select>
+        <span class="date-badge" id="dateBadge">加载中...</span>
+        <button class="refresh-btn" id="refreshBtn" onclick="refreshData()">
+          🔄 刷新数据
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="stats-bar" id="statsBar">
+      <div class="stat-card">
+        <div class="stat-value" id="totalCount">-</div>
+        <div class="stat-label">筛选结果总数</div>
+      </div>
+    </div>
+
+    <div id="content">
+      <div class="loading">
+        <div class="spinner"></div>
+        <p style="margin-top: 12px;">正在加载数据...</p>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      ⚠️ 数据来源：腾讯自选股公开数据接口。本页面仅为数据展示工具，不构成任何投资建议。投资有风险，决策需谨慎。
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <div class="footer">
+    数据每日自动刷新 · 
+    <a href="https://github.com/" target="_blank" id="githubLink">GitHub</a>
+  </div>
+
+  <script>
+    let currentData = null;
+    let historyIndex = [];
+    let currentDate = 'latest';
+
+    // ====== 数据加载 ======
+    async function loadData(dateKey) {
+      const content = document.getElementById('content');
+      content.innerHTML = '<div class="loading"><div class="spinner"></div><p>正在加载数据...</p></div>';
+
+      try {
+        const url = dateKey === 'latest'
+          ? 'data/latest.json'
+          : `data/history/${dateKey}.json`;
+        
+        const resp = await fetch(url);
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        currentData = await resp.json();
+        currentDate = dateKey;
+        
+        renderData(currentData);
+        updateDateBadge();
+        
+        if (dateKey === 'latest') {
+          // 加载历史索引
+          loadHistoryIndex();
+        }
+      } catch (err) {
+        content.innerHTML = `
+          <div class="empty-state">
+            <div class="icon">📊</div>
+            <p>数据加载失败</p>
+            <p style="font-size:0.85rem;margin-top:8px;">${err.message}</p>
+            <p style="font-size:0.8rem;margin-top:4px;color:var(--text-secondary);">
+              请确认数据文件是否存在，或等待首次数据生成
+            </p>
+          </div>
+        `;
+      }
+    }
+
+    async function loadHistoryIndex() {
+      try {
+        const resp = await fetch('data/history-index.json');
+        if (resp.ok) {
+          historyIndex = await resp.json();
+          updateDateSelect();
+        }
+      } catch (e) {
+        // 历史索引不存在时静默处理
+      }
+    }
+
+    // ====== 渲染 ======
+    function renderData(data) {
+      const content = document.getElementById('content');
+      
+      if (!data || data.totalCount === 0) {
+        content.innerHTML = `
+          <div class="empty-state">
+            <div class="icon">🔍</div>
+            <p>${data.date} 无符合条件的股票</p>
+            <p style="font-size:0.85rem;margin-top:8px;color:var(--text-secondary);">
+              均线多头排列 + 归母净利润>0 + 3月涨幅 0%~100%
+            </p>
+          </div>
+        `;
+        document.getElementById('totalCount').textContent = '0';
+        return;
+      }
+
+      // 统计
+      document.getElementById('totalCount').textContent = data.totalCount;
+
+      // 渲染各市场
+      const markets = data.markets || {};
+      const marketOrder = ['深圳主板', '创业板', '深圳其他'];
+
+      let html = '';
+      
+      marketOrder.forEach(marketName => {
+        const market = markets[marketName];
+        if (!market || !market.stocks || market.stocks.length === 0) return;
+        
+        html += renderMarketSection(marketName, market);
+      });
+
+      // 渲染其他未排序的市场
+      Object.entries(markets).forEach(([name, market]) => {
+        if (marketOrder.includes(name)) return;
+        if (!market.stocks || market.stocks.length === 0) return;
+        html += renderMarketSection(name, market);
+      });
+
+      content.innerHTML = html || '<div class="empty-state"><p>无数据</p></div>';
+    }
+
+    function renderMarketSection(name, market) {
+      const stocks = market.stocks;
+      const tableRows = stocks.map((s, i) => `
+        <tr>
+          <td>${i + 1}</td>
+          <td class="code-cell">${s.code}</td>
+          <td class="name-cell">${s.name}</td>
+          <td class="price-cell">${s.price ? s.price.toFixed(2) : '-'}</td>
+          <td class="${(s.changePct || 0) >= 0 ? 'positive' : 'negative'}">
+            ${s.changePct != null ? (s.changePct >= 0 ? '+' : '') + s.changePct.toFixed(2) + '%' : '-'}
+          </td>
+          <td class="${(s.chg60d || 0) >= 0 ? 'positive' : 'negative'}">
+            ${s.chg60d != null ? (s.chg60d >= 0 ? '+' : '') + s.chg60d.toFixed(2) + '%' : '-'}
+          </td>
+          <td>${s.pe ? s.pe.toFixed(1) : '-'}</td>
+          <td>${s.pb ? s.pb.toFixed(2) : '-'}</td>
+          <td>${s.totalMv ? (s.totalMv / 1e8).toFixed(1) + '亿' : '-'}</td>
+          <td>${s.turnoverRate ? s.turnoverRate.toFixed(2) + '%' : '-'}</td>
+          <td>${s.volumeRatio ? s.volumeRatio.toFixed(2) : '-'}</td>
+        </tr>
+      `).join('');
+
+      return `
+        <div class="market-section">
+          <div class="market-header" onclick="toggleMarket(this)">
+            <div class="market-title">
+              ${name}
+              <span class="market-count">${stocks.length} 只</span>
+            </div>
+            <span class="market-toggle">▼</span>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>代码</th>
+                  <th>名称</th>
+                  <th>现价</th>
+                  <th>今日涨跌</th>
+                  <th>3月涨幅</th>
+                  <th>PE</th>
+                  <th>PB</th>
+                  <th>总市值</th>
+                  <th>换手率</th>
+                  <th>量比</th>
+                </tr>
+              </thead>
+              <tbody>${tableRows}</tbody>
+            </table>
+          </div>
+        </div>
+      `;
+    }
+
+    function toggleMarket(header) {
+      const section = header.parentElement;
+      section.classList.toggle('collapsed');
+    }
+
+    // ====== 日期选择 ======
+    function updateDateSelect() {
+      const select = document.getElementById('dateSelect');
+      select.innerHTML = '<option value="latest">最新数据</option>';
+      
+      historyIndex.forEach(item => {
+        const option = document.createElement('option');
+        option.value = item.date;
+        option.textContent = `${item.date} (${item.totalCount}只)`;
+        select.appendChild(option);
+      });
+      
+      // 选中当前日期
+      if (currentDate !== 'latest') {
+        select.value = currentDate;
+      }
+    }
+
+    function updateDateBadge() {
+      const badge = document.getElementById('dateBadge');
+      if (currentData) {
+        badge.textContent = `📅 ${currentData.date}`;
+      }
+    }
+
+    function onDateChange() {
+      const select = document.getElementById('dateSelect');
+      loadData(select.value);
+    }
+
+    // ====== 刷新 ======
+    function refreshData() {
+      const btn = document.getElementById('refreshBtn');
+      btn.disabled = true;
+      btn.textContent = '⏳ 刷新中...';
+      
+      // 重新加载最新数据
+      loadData('latest').finally(() => {
+        btn.disabled = false;
+        btn.textContent = '🔄 刷新数据';
+        showToast('数据已刷新');
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2000);
+    }
+
+    // ====== 初始化 ======
+    document.addEventListener('DOMContentLoaded', () => {
+      loadData('latest');
+    });
+
+    // 设置 GitHub 链接
+    document.addEventListener('DOMContentLoaded', () => {
+      const link = document.getElementById('githubLink');
+      if (window.location.hostname.includes('github.io')) {
+        const parts = window.location.hostname.split('.');
+        const username = parts[0];
+        const repo = window.location.pathname.split('/')[1] || 'stock-screener';
+        link.href = `https://github.com/${username}/${repo}`;
+      }
+    });
+  </script>
+</body>
+</html>

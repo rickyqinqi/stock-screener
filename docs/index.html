@@ -1168,7 +1168,7 @@
         ind: "\u4ea7\u4e1a\u65b9\u5411", val: "\u4f30\u503c\u6c34\u4f4d", cap: "\u8d44\u91d1\u4fe1\u53f7", fund: "\u57fa\u672c\u9762", short: "\u77ed\u7ebf\u76d8\u9762"
       };
 
-      grid.innerHTML = BLUE_DATA.map(s => {
+      grid.innerHTML = BLUE_DATA.sort((a,b) => b.bull - a.bull || a.bear - b.bear || b.score - a.score).map(s => {
         const tierColor = {S:"#16a34a",A:"#2563eb",B:"#6b7280",C:"#d97706"}[s.tier] || "#6b7280";
         return '<div class="blue-card tier-'+s.tier+'">'+
           '<div class="blue-card-header">'+

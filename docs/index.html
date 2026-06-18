@@ -332,6 +332,186 @@
       border-top: 1px solid var(--border);
       margin-top: 24px;
     }
+
+    /* ====== 圆桌分析卡片 ====== */
+    .roundtable-card {
+      background: linear-gradient(135deg, #fffbeb 0%, #fff7ed 50%, #fef3c7 100%);
+      border: 2px solid #f59e0b;
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .rt-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .rt-header .rt-icon {
+      font-size: 2rem;
+    }
+
+    .rt-header h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #92400e;
+    }
+
+    .rt-header .rt-badge {
+      background: #f59e0b;
+      color: #fff;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .rt-conclusion {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      padding: 14px 18px;
+      background: #fff;
+      border-radius: 8px;
+      border-left: 4px solid #dc2626;
+      margin-bottom: 16px;
+    }
+
+    .rt-conclusion strong { color: #1e293b; }
+    .rt-conclusion em { color: #dc2626; font-style: normal; font-weight: 700; }
+
+    .rt-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .rt-stat {
+      background: #fff;
+      padding: 12px 14px;
+      border-radius: 8px;
+      text-align: center;
+      border: 1px solid #fde68a;
+    }
+
+    .rt-stat-value {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .rt-stat-label {
+      font-size: 0.72rem;
+      color: #6b7280;
+      margin-top: 2px;
+    }
+
+    .rt-stat-value.up { color: #dc2626; }
+    .rt-stat-value.down { color: #16a34a; }
+    .rt-stat-value.warn { color: #f59e0b; }
+
+    .rt-voices {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .rt-voice {
+      background: #fff;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #fde68a;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .rt-voice-emoji {
+      font-size: 1.5rem;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fef3c7;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .rt-voice-info {
+      flex: 1;
+    }
+
+    .rt-voice-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .rt-voice-stance {
+      font-size: 0.72rem;
+      color: #6b7280;
+    }
+
+    .rt-voice-stance.bearish { color: #16a34a; }
+    .rt-voice-stance.bullish { color: #dc2626; }
+
+    .rt-warnings {
+      background: #fff;
+      padding: 14px 18px;
+      border-radius: 8px;
+      border: 1px solid #fca5a5;
+    }
+
+    .rt-warnings h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #dc2626;
+      margin-bottom: 8px;
+    }
+
+    .rt-warnings ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .rt-warnings li {
+      font-size: 0.82rem;
+      padding: 4px 0;
+      color: #4b5563;
+    }
+
+    .rt-warnings li::before {
+      content: "⚠️ ";
+    }
+
+    .rt-stance-bar {
+      display: flex;
+      gap: 12px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    .rt-stance-tag {
+      padding: 4px 12px;
+      border-radius: 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .rt-stance-tag.bear {
+      background: #dcfce7;
+      color: #16a34a;
+    }
+
+    .rt-stance-tag.bull {
+      background: #fee2e2;
+      color: #dc2626;
+    }
   </style>
 </head>
 <body>
@@ -354,6 +534,108 @@
   </div>
 
   <div class="container">
+    <!-- ====== 圆桌投研分析 ====== -->
+    <div class="roundtable-card" id="roundtable">
+      <div class="rt-header">
+        <span class="rt-icon">🟡</span>
+        <h2>投研圆桌综合视角</h2>
+        <span class="rt-badge">2026-06-18 · 6位专家</span>
+      </div>
+
+      <div class="rt-conclusion">
+        <strong>方向对、逻辑硬，但<em>时机已偏晚且资金面出现方向性背离</em></strong>——AI硬件产业链景气真实（60%标的集中在电子半导体+新材料），但深证成指PE处于99%历史分位，龙头标的出现机构折价减持（深南电路-5亿、南大光电-28.75亿、北京君正20笔折价大宗）。六位专家中<strong>4位偏空/观望，2位选择性偏多</strong>。
+      </div>
+
+      <div class="rt-grid">
+        <div class="rt-stat">
+          <div class="rt-stat-value warn">>99%</div>
+          <div class="rt-stat-label">深证成指PE·10年分位</div>
+        </div>
+        <div class="rt-stat">
+          <div class="rt-stat-value warn">~75倍</div>
+          <div class="rt-stat-label">95只PE中位数</div>
+        </div>
+        <div class="rt-stat">
+          <div class="rt-stat-value up">~50%</div>
+          <div class="rt-stat-label">3月涨幅中位数</div>
+        </div>
+        <div class="rt-stat">
+          <div class="rt-stat-value up">2.02万亿</div>
+          <div class="rt-stat-label">两市融资余额·历史新高</div>
+        </div>
+        <div class="rt-stat">
+          <div class="rt-stat-value down">-5亿/日</div>
+          <div class="rt-stat-label">深南电路今日主力净流出</div>
+        </div>
+        <div class="rt-stat">
+          <div class="rt-stat-value warn">鹰派</div>
+          <div class="rt-stat-label">美联储6月·暗示年内加息</div>
+        </div>
+      </div>
+
+      <div class="rt-voices">
+        <div class="rt-voice">
+          <div class="rt-voice-emoji">🌊</div>
+          <div class="rt-voice-info">
+            <div class="rt-voice-name">产业策略师·星望远</div>
+            <div class="rt-voice-stance bearish">偏空 · 过半仓等回调</div>
+          </div>
+        </div>
+        <div class="rt-voice">
+          <div class="rt-voice-emoji">📡</div>
+          <div class="rt-voice-info">
+            <div class="rt-voice-name">信号派首席·洲四方</div>
+            <div class="rt-voice-stance bearish">偏空 · 资金面红灯</div>
+          </div>
+        </div>
+        <div class="rt-voice">
+          <div class="rt-voice-emoji">🧮</div>
+          <div class="rt-voice-info">
+            <div class="rt-voice-name">估值分析师·文衡价</div>
+            <div class="rt-voice-stance bearish">偏空 · 涨的是PE不是EPS</div>
+          </div>
+        </div>
+        <div class="rt-voice">
+          <div class="rt-voice-emoji">🏔️</div>
+          <div class="rt-voice-info">
+            <div class="rt-voice-name">逆向投资人·坤候底</div>
+            <div class="rt-voice-stance bearish">偏空 · 无一满足买入框架</div>
+          </div>
+        </div>
+        <div class="rt-voice">
+          <div class="rt-voice-emoji">🔬</div>
+          <div class="rt-voice-info">
+            <div class="rt-voice-name">财报研究员·钊审财</div>
+            <div class="rt-voice-stance bullish">选择性偏多 · 业绩好的可持有</div>
+          </div>
+        </div>
+        <div class="rt-voice">
+          <div class="rt-voice-emoji">⚡</div>
+          <div class="rt-voice-info">
+            <div class="rt-voice-name">短线冲浪手·磊追浪</div>
+            <div class="rt-voice-stance bullish">选择性偏多 · 鱼尾行情</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rt-warnings">
+        <h4>⚠️ 核心风险信号</h4>
+        <ul>
+          <li><strong>资金背离</strong>：龙头标的机构系统性减持——深南电路主力流出5亿、南大光电20日流出28.75亿、北京君正20笔折价大宗</li>
+          <li><strong>估值极值</strong>：PE中位数75倍 vs 沪深300的14.4倍，90%涨幅靠PE扩张而非EPS增长</li>
+          <li><strong>伪多头陷阱</strong>：约30%标的均线多头但基本面恶化——麦格米特Q4亏损、星源材质净利崩盘90%</li>
+          <li><strong>外部风险</strong>：美联储暗示年内加息 + 融资余额2.02万亿历史新高，杠杆与利率共振</li>
+          <li><strong>产业共识</strong>：高端PCB（深南电路）&gt; 半导体前驱体（雅克科技）&gt; 功率半导体SiC（扬杰科技）是景气度最高环节</li>
+        </ul>
+
+        <div class="rt-stance-bar" style="margin-top:12px;">
+          <span class="rt-stance-tag bear">偏空/观望 4票</span>
+          <span class="rt-stance-tag bull">选择性偏多 2票</span>
+          <span style="font-size:0.75rem;color:#6b7280;line-height:2;">共识：方向对 · 分歧：时机/价格</span>
+        </div>
+      </div>
+    </div>
+
     <div class="stats-bar" id="statsBar">
       <div class="stat-card">
         <div class="stat-value" id="totalCount">-</div>

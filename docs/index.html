@@ -493,7 +493,7 @@
           </td>
           <td>${s.pe ? s.pe.toFixed(1) : '-'}</td>
           <td>${s.pb ? s.pb.toFixed(2) : '-'}</td>
-          <td>${s.totalMv ? (s.totalMv / 1e8).toFixed(1) + '亿' : '-'}</td>
+          <td>${s.totalMv ? s.totalMv.toFixed(1) + '亿' : '-'}</td>
           <td>${s.turnoverRate ? s.turnoverRate.toFixed(2) + '%' : '-'}</td>
           <td>${s.volumeRatio ? s.volumeRatio.toFixed(2) : '-'}</td>
         </tr>

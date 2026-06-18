@@ -1,0 +1,20 @@
+{
+  "date": "2026-06-18",
+  "total": 13,
+  "ranking": [
+    {"code":"sz300373","name":"扬杰科技","score":15,"bull":4,"bear":2,"tier":"S"},
+    {"code":"sz002850","name":"科达利","score":14,"bull":4,"bear":2,"tier":"S"},
+    {"code":"sz002916","name":"深南电路","score":13,"bull":2,"bear":4,"tier":"A"},
+    {"code":"sz300054","name":"鼎龙股份","score":11,"bull":2,"bear":4,"tier":"A"},
+    {"code":"sz002409","name":"雅克科技","score":10,"bull":2,"bear":4,"tier":"A"},
+    {"code":"sz002138","name":"顺络电子","score":10,"bull":2,"bear":4,"tier":"A"},
+    {"code":"sz300037","name":"新宙邦","score":10,"bull":3,"bear":3,"tier":"A"},
+    {"code":"sz002353","name":"杰瑞股份","score":9,"bull":2,"bear":4,"tier":"B"},
+    {"code":"sz300223","name":"北京君正","score":9,"bull":3,"bear":3,"tier":"B"},
+    {"code":"sz002668","name":"TCL智家","score":8,"bull":2,"bear":4,"tier":"B"},
+    {"code":"sz002831","name":"裕同科技","score":8,"bull":3,"bear":3,"tier":"B"},
+    {"code":"sz300811","name":"铂科新材","score":7,"bull":2,"bear":4,"tier":"C"},
+    {"code":"sz300346","name":"南大光电","score":6,"bull":1,"bear":5,"tier":"C"}
+  ],
+  "details": {}
+}

@@ -580,6 +580,100 @@
       width: 24px;
       text-align: center;
     }
+
+    /* ====== 蓝标精研卡片 ====== */
+    .blue-card {
+      background: #fff;
+      border-radius: 10px;
+      border: 2px solid #bfdbfe;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .blue-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(37,99,235,0.15);
+    }
+
+    .blue-card.tier-S { border-color: #16a34a; border-width: 3px; }
+    .blue-card.tier-A { border-color: #2563eb; border-width: 2px; }
+    .blue-card.tier-C { border-color: #f59e0b; }
+
+    .blue-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .blue-card-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .blue-card-code {
+      font-family: monospace;
+      font-size: 0.75rem;
+      color: #6b7280;
+    }
+
+    .blue-card-tier {
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    .blue-card-tier.S { background: #dcfce7; color: #16a34a; }
+    .blue-card-tier.A { background: #dbeafe; color: #2563eb; }
+    .blue-card-tier.B { background: #f3f4f6; color: #6b7280; }
+    .blue-card-tier.C { background: #fef3c7; color: #d97706; }
+
+    .blue-card-summary {
+      font-size: 0.8rem;
+      color: #374151;
+      margin-bottom: 10px;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
+    .blue-card-dim {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+
+    .blue-dim-chip {
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.68rem;
+      font-weight: 600;
+    }
+
+    .blue-card-verdict {
+      font-size: 0.75rem;
+      color: #4b5563;
+      line-height: 1.5;
+      padding: 8px;
+      background: #f9fafb;
+      border-radius: 6px;
+      border-left: 3px solid #2563eb;
+    }
+
+    .blue-card-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+      font-size: 0.72rem;
+      color: #6b7280;
+      margin: 8px 0;
+    }
+
+    .blue-card-stats span { white-space: nowrap; }
   </style>
 </head>
 <body>
@@ -712,6 +806,22 @@
             <div class="vote-expert"><span class="vote-expert-emoji">🔬</span><strong>财报研究员·钊审财</strong> <span class="rt-stance-tag bull" style="margin-left:auto">偏多</span> 业绩好的可持有</div>
             <div class="vote-expert"><span class="vote-expert-emoji">⚡</span><strong>短线冲浪手·磊追浪</strong> <span class="rt-stance-tag bull" style="margin-left:auto">偏多</span> 主升浪中期鱼尾行情</div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== 蓝标精研 ====== -->
+    <div class="blue-section" id="blueAnalysis">
+      <div class="market-section" style="border: 2px solid #2563eb;">
+        <div class="market-header" onclick="toggleMarket(this)" style="background: linear-gradient(135deg, #eff6ff, #dbeafe);">
+          <div class="market-title">
+            💎 蓝标精研 · 13只优质标的深度分析
+            <span class="market-count" style="background:#2563eb;color:#fff;">≥2维蓝/绿评级</span>
+          </div>
+          <span class="market-toggle">▼</span>
+        </div>
+        <div class="table-wrapper" id="blueDetailContent" style="padding:16px;">
+          <div id="blueGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px;"></div>
         </div>
       </div>
     </div>
@@ -980,6 +1090,111 @@
         const repo = window.location.pathname.split('/')[1] || 'stock-screener';
         link.href = `https://github.com/${username}/${repo}`;
       }
+    });
+    // ====== 蓝标精研渲染 ======
+    const BLUE_DATA = [
+      {code:"sz300373",name:"\u626c\u6770\u79d1\u6280",tier:"S",score:15,bull:4,bear:2,pe:49,peg:"1.60",mv:737,ind:"\u529f\u7387\u534a\u5bfc\u4f53SiC",indStars:"\u2605\u2605\u2605\u2605",speed:"\u52a0\u901f",rev:"+18%",profit:"+26%",roe:"13.7%",cash:"\u7ecf\u8425\u73b0\u91d1\u6d4117\u4ebf>\u51c0\u522912.5\u4ebf",
+        summary:"\u529f\u7387\u534a\u5bfc\u4f53SiC\u9f99\u5934\uff0c\u552f\u4e00\u4e3b\u529b\u51c0\u6d41\u5165+2\u4ebf\u7684\u6807\u7684\uff0cPE 49\u500dPEG 1.60\u5408\u7406\u504f\u9ad8",
+        verdict:"13\u53ea\u4e2d\u6700\u53d7\u8ba4\u53ef\u7684\u6807\u7684\u2014\u2014\u4ea7\u4e1a+\u4fe1\u53f7+\u8d22\u62a5+\u77ed\u7ebf\u5747\u504f\u591a\u3002SiC\u653e\u91cf\u903b\u8f91\u786e\u5b9a\uff0c\u73b0\u91d1\u6d41\u624e\u5b9e\uff0c\u8d44\u91d1\u5728\u7528\u811a\u6295\u7968\u3002\u552f\u4e00\u9690\u5fe7\u662fPEG 1.6\u504f\u9ad8\u3002",
+        details:{ind:"\u78b3\u5316\u7845\u4f9b\u9700\u4e24\u65fa\u81f3\u5c112027\u5e74\uff0cAI\u7b97\u529b\u5e26\u52a8\u529f\u7387\u9700\u6c42",val:"Forward PEG 1.33\uff0c\u53ef\u63a5\u53d7",cap:"\u4eca\u65e5\u4e3b\u529b+2.01\u4ebf\uff0c\u9006\u52bf\u5927\u5e45\u6d41\u5165",fund:"\u51c0\u5229+26%\uff0c\u6bdb\u522934%\u7a33\u5b9a\uff0c\u73b0\u91d1\u725b",short:"\u4eca\u65e5+7.57%\u7a81\u7834\uff0c\u91cf\u6bd41.89"}
+      },
+      {code:"sz002850",name:"\u79d1\u8fbe\u5229",tier:"S",score:14,bull:4,bear:2,pe:32,peg:"0.93",mv:597,ind:"\u9502\u7535\u7ed3\u6784\u4ef6\u9f99\u5934",indStars:"\u2605\u2605\u2605\u2605",speed:"\u52a0\u901f",rev:"+26%",profit:"+20%",roe:"14.1%",cash:"\u7ecf\u8425\u73b0\u91d1\u6d4119\u4ebf>\u51c0\u521917.5\u4ebf",
+        summary:"\u9502\u7535\u7ed3\u6784\u4ef6\u9690\u5f62\u51a0\u519b\uff0cPE 32\u500dPEG 0.93\u6700'\u6b63\u5e38'\u7684\u4f30\u503c\uff0c\u652f\u51fa+26%\u7a33\u5065\u589e\u957f",
+        verdict:"\u4f30\u503c+\u8d22\u62a5+\u4ea7\u4e1a\u5747\u8ba4\u53ef\u3002PEG\u63a5\u8fd11\uff0c3\u5e74\u51c0\u5229CAGR 25%\uff0c\u53ef\u4f5c\u4e3a\u7ec4\u5408\u538b\u8231\u77f3\u3002\u552f\u4e00\u4e0d\u8db3\u662f\u6bdb\u5229\u7387\u504f\u4f4e(24%)\u3002",
+        details:{ind:"\u5b81\u5fb7\u65f6\u4ee3\u6838\u5fc3\u4f9b\u5e94\u5546\uff0c\u5e02\u5360\u7387\u8d8530%",val:"Forward PEG 0.69\uff0c\u975e\u5e38\u5408\u7406",cap:"\u8fd120\u65e5+6\u4ebf\uff0c\u4e2d\u671f\u504f\u6b63\u5411",fund:"\u8425\u6536\u51c0\u5229\u53cc\u9ad8\u589e\uff0c\u73b0\u91d1\u6d41\u5f3a\u52b2",short:"\u6162\u725b\u6807\u7684\uff0c\u4e0d\u9002\u5408\u77ed\u7ebf\u535a\u5f08"}
+      },
+      {code:"sz002916",name:"\u6df1\u5357\u7535\u8def",tier:"A",score:13,bull:2,bear:4,pe:82,peg:"1.34",mv:2267,ind:"\u9ad8\u7aefPCB/\u5c01\u88c5\u57fa\u677f",indStars:"\u2605\u2605\u2605\u2605\u2605",speed:"\u52a0\u901f",rev:"+32%",profit:"+74%",roe:"20.8%",cash:"\u7ecf\u8425\u73b0\u91d1\u6d4138\u4ebf>\u51c0\u523933\u4ebf",
+        summary:"AI\u7b97\u529bPCB\u9f99\u5934\uff0c\u51c0\u5229\u66b4\u589e74%+\u73b0\u91d1\u6d41\u6781\u4f73\uff0c\u662f13\u53ea\u4e2d\u6700\u786e\u5b9a\u7684\u6210\u957f\u6807\u7684",
+        verdict:"\u540c\u4e00\u6807\u7684\u6700\u5927\u5206\u6b67\uff1a\u8d22\u62a5+\u77ed\u7ebf\u504f\u591a\uff0c\u4f30\u503c+\u4fe1\u53f7+\u9006\u5411\u504f\u7a7a\u3002PE 82\u500d\u4e0d\u4fbf\u5b9c\u4f46Forward PEG 0.90\u53ef\u63a5\u53d7\u3002\u4e3b\u529b\u4eca\u65e5-5\u4ebf\u662f\u77ed\u671f\u9690\u5fe7\u3002",
+        details:{ind:"AI\u670d\u52a1\u5668\u6838\u5fc3\u4f9b\u5e94\u5546\uff0c\u56fd\u5185\u552f\u4e00ABF\u8f7d\u677f",val:"Forward PE 55\u500d+PEG 0.90\uff0c\u76c8\u5229\u8d8b\u52bf\u5411\u4e0a",cap:"-4.99\u4ebf+\u673a\u6784\u6298\u4ef7\u5927\u5b97\uff0c\u77ed\u7ebf\u83b7\u5229\u4e86\u7ed3",fund:"\u8425\u6536\u51c0\u5229\u53cc\u9ad8\u589e\uff0c\u9010\u5b63\u52a0\u901f",short:"PCB\u603b\u9f99\u5934\u6628\u65e5\u6da8\u505c\u540e\u56de\u8c03\uff0cMA5=413"}
+      },
+      {code:"sz300054",name:"\u9f0e\u9f99\u80a1\u4efd",tier:"A",score:11,bull:2,bear:4,pe:105,peg:"2.31",mv:867,ind:"CMP\u629b\u5149\u57ab",indStars:"\u2605\u2605\u2605\u2605\u2605",speed:"\u52a0\u901f",rev:"+10%",profit:"+38%",roe:"12.8%",cash:"\u6bdb\u522951%\uff0c\u7ecf\u8425\u73b0\u91d1\u6d4111.6\u4ebf>\u51c0\u52297.2\u4ebf",
+        summary:"CMP\u629b\u5149\u57ab\u56fd\u5185\u552f\u4e00\uff0c\u6bdb\u522951%+\u51c0\u5229+38%\uff0c\u4f46PEG 2.31\u504f\u8d35+\u4e3b\u529b\u6301\u7eed\u6d41\u51fa",
+        verdict:"\u4ea7\u4e1a+\u8d22\u62a5\u770b\u597d\u8d5b\u9053\uff0c\u4f30\u503c+\u9006\u5411\u5acc\u8d35\uff0c\u4fe1\u53f7\u770b\u8d44\u91d1\u6d41\u51fa\u3002\u56fd\u4ea7\u66ff\u4ee3\u5151\u73b0\u6700\u6f02\u4eae\u6807\u7684\uff0c\u4f46\u9700\u7b49\u56de\u8c03\u3002",
+        details:{ind:"\u957f\u946bIPO\u50ac\u5316+\u5b58\u50a8\u6269\u4ea7\uff0cCMP\u8017\u6750\u9700\u6c42\u7206\u53d1",val:"PEG 2.31\u504f\u8d35\uff0c\u6da8\u5e45101%\u8fdc\u8d85\u589e\u901f45%",cap:"\u6301\u7eed\u6d41\u51fa+\u6298\u4ef7\u5927\u5b97",fund:"\u534a\u5bfc\u4f53\u6750\u6599\u653e\u91cf+\u5229\u6da6\u7387\u53cc\u51fb",short:"\u975e\u672c\u5468\u4e3b\u7ebf\u6807\u7684\uff0c\u4e2d\u7ebf\u903b\u8f91\u786c"}
+      },
+      {code:"sz002409",name:"\u96c5\u514b\u79d1\u6280",tier:"A",score:10,bull:2,bear:4,pe:70,peg:"1.89",mv:721,ind:"\u534a\u5bfc\u4f53\u524d\u9a71\u4f53",indStars:"\u2605\u2605\u2605\u2605",speed:"\u7a33\u5b9a",rev:"+25%",profit:"+15%",roe:"12.6%",cash:"\u7ecf\u8425\u73b0\u91d1\u6d4110.3\u4ebf\uff08\u51c0\u5229\u540c\u7ea7\uff09",
+        summary:"\u534a\u5bfc\u4f53\u524d\u9a71\u4f53\u5e73\u53f0\uff0c\u8425\u6536+25%\u4f46PEG 1.89\u504f\u8d35\uff0c\u589e\u901f\u4e0e\u4f30\u503c\u8d5b\u8dd1\u4e2d",
+        verdict:"\u4ea7\u4e1a\u770b\u597d\u4f46\u4f30\u503c+\u9006\u5411\u504f\u7a7a\u3002\u524d\u9a71\u4f53\u662f\u5173\u952e\u534a\u5bfc\u4f53\u6750\u6599\uff0c\u4f46PEG 1.89\u8d35\u4e14\u51c0\u5229\u589e\u901f\u843d\u540e\u4e8e\u8425\u6536\u3002",
+        details:{ind:"\u524d\u9a71\u4f53+SOD+\u7535\u5b50\u7279\u6c14\uff0c\u56fd\u4ea7\u552f\u4e00/\u5510\u4e8c",val:"Forward PEG 1.39\uff0c\u5c1a\u53ef\u63a5\u53d7",cap:"\u65e0\u660e\u786e\u4fe1\u53f7\uff0c\u673a\u6784\u6301\u4ed3\u76f8\u5bf9\u7a33\u5b9a",fund:"\u8425\u6536\u9ad8\u589e\u4f46\u8d39\u7528\u589e\u901f\u5feb\u4e8e\u8425\u6536",short:"\u4e2d\u7ebf\u597d\u6807\u7684\u4f46\u77ed\u7ebf\u65e0\u50ac\u5316\u5242"}
+      },
+      {code:"sz002138",name:"\u987a\u7edc\u7535\u5b50",tier:"A",score:10,bull:2,bear:4,pe:57,peg:"2.25",mv:565,ind:"\u88ab\u52a8\u5143\u4ef6\u7535\u611f",indStars:"\u2605\u2605\u2605",speed:"\u52a0\u901f",rev:"+14%",profit:"+23%",roe:"16.1%",cash:"\u7ecf\u8425\u73b0\u91d1\u6d4117\u4ebf>\u51c0\u521911.4\u4ebf",
+        summary:"\u7535\u611f\u9f99\u5934\uff0c\u6bdb\u523937%+ROE 16%\u73b0\u91d1\u6d41\u6781\u597d\uff0c\u4f46PEG 2.25\u504f\u8d35+\u6da8\u5e4593%\u5df2\u900f\u652f",
+        verdict:"\u57fa\u672c\u9762\u4f18\u79c0\u4f46\u4f30\u503c\u592a\u8d35\u3002\u6da8\u5e4593%\u5bf9\u5e9425%\u589e\u901f\uff0c\u4f30\u503c\u5df2\u8d85\u989d\u53cd\u6620\u4e50\u89c2\u9884\u671f\u3002\u7b49\u56de\u8c03\u6216\u76c8\u5229\u4e0a\u4fee\u3002",
+        details:{ind:"AI\u670d\u52a1\u5668+\u6c7d\u8f66\u7535\u5b50\u53cc\u9a71\u52a8\uff0c\u7535\u611f\u7528\u91cf\u5927\u5e45\u589e\u52a0",val:"PEG 2.25\u504f\u8d35\uff0cForward PEG 1.65",cap:"\u4eca\u65e5\u4e3b\u529b+6765\u4e07\uff0c\u77ed\u7ebf\u6d41\u5165",fund:"\u51c0\u522923%\u8dd1\u8d62\u8425\u6536\uff0c\u6bdb\u523937%\u4f18\u5f02",short:"\u88ab\u52a8\u5143\u4ef6\u677f\u5757\u5f3a\u52bf\u4f46\u975e\u672c\u5468\u6700\u70ed"}
+      },
+      {code:"sz300037",name:"\u65b0\u5b99\u90a6",tier:"A",score:10,bull:3,bear:3,pe:46,peg:"0.45",mv:636,ind:"\u9502\u7535\u7535\u89e3\u6db2",indStars:"\u2605\u2605\u2605",speed:"\u7a33\u5b9a",rev:"+23%",profit:"+16%",roe:"10.7%",cash:"\u7ecf\u8425\u73b0\u91d1\u6d4111.7\u4ebf>\u51c0\u521911\u4ebf",
+        summary:"\u7535\u89e3\u6db2\u4e8c\u54e5+\u6c1f\u5316\u5de5\u53cc\u8f6e\u9a71\u52a8\uff0cPEG 0.45\u6700\u4fbf\u5b9c\uff0cForward PE\u4ec528\u500d",
+        verdict:"\u4f30\u503c\u6700\u770b\u597d(PEG 0.45)\u3002\u7535\u89e3\u6db2\u4ef7\u683c\u89e6\u5e95\u53cd\u5f39+\u6c1f\u5316\u5de5\u653e\u91cf\u5e26\u6765\u7b2c\u4e8c\u589e\u957f\u66f2\u7ebf\u3002\u6700\u5927\u9690\u5fe7\u662f\u6bdb\u5229\u7387\u4ec524%\u504f\u4f4e\u3002",
+        details:{ind:"\u9502\u7535\u7535\u89e3\u6db2+\u7535\u5b50\u4fe1\u606f\u5316\u5b66\u54c1+\u6709\u673a\u6c1f\u5316\u5b66\u54c1\u4e09\u7ebf\u5e76\u8fdb",val:"Forward PE 28\u500d\uff0c\u660e\u663e\u5b89\u5168\u8fb9\u9645",cap:"\u4eca\u65e5-1.65\u4ebf\uff0c\u77ed\u671f\u504f\u5f31\u4f46\u4e2d\u6027",fund:"\u8425\u6536+23%\u6062\u590d\u589e\u957f\uff0c\u4f46ROE\u504f\u4f4e",short:"\u4e2d\u7ebf\u4f30\u503c\u4fbf\u5b9c\uff0c\u77ed\u7ebf\u65e0\u50ac\u5316"}
+      },
+      {code:"sz002353",name:"\u6770\u745e\u80a1\u4efd",tier:"B",score:9,bull:2,bear:4,pe:61,peg:"1.50",mv:1678,ind:"\u6cb9\u670d\u538b\u88c2\u8bbe\u5907",indStars:"\u2605\u2605\u2605\u2605",speed:"\u51cf\u901f",rev:"+21%",profit:"+2%",roe:"12.2%",cash:"\u7ecf\u8425\u73b0\u91d1\u6d4154\u4ebf(\u56de\u6536\u5386\u53f2\u5e94\u6536)",
+        summary:"\u6cb9\u670d\u538b\u88c2\u8bbe\u5907\u9f99\u5934\uff0cQ4\u8425\u6536\u521b\u5386\u53f2\u65b0\u9ad8\u4f46\u589e\u6536\u4e0d\u589e\u5229\uff0c\u9700\u7b49\u6bdb\u5229\u7387\u56de\u5347",
+        verdict:"\u8d22\u62a5+\u4ea7\u4e1a\u504f\u591a(\u6301\u6709\u4e0d\u5356)\uff0c\u4f30\u503c+\u9006\u5411\u504f\u7a7a(\u7b49\u56de\u8c03)\u3002\u8425\u6536\u9ad8\u589e\u4f46\u51c0\u5229\u505c\u6ede\uff0c\u8d39\u7528\u4fb5\u8680\u4e25\u91cd\u3002",
+        details:{ind:"\u6cb9\u7530\u538b\u88c2/\u56fa\u4e95\u8bbe\u5907\u56fd\u5185\u5e02\u5360\u7387\u7b2c\u4e00\uff0c\u4e2d\u4e1c\u975e\u6d32\u5feb\u901f\u62d3\u5c55",val:"PEG 1.50\u504f\u9ad8\uff0c\u9700\u7b49\u6bdb\u5229\u7387\u56de\u5347\u786e\u8ba4",cap:"\u5343\u4ebf\u5927\u5e02\u503c\uff0c\u673a\u6784\u6301\u4ed3\u7a33\u5b9a",fund:"\u8425\u6536+21%\u4f46\u51c0\u5229\u4ec5+2%\uff0c\u589e\u6536\u4e0d\u589e\u5229",short:"MA60\u504f\u79bb30%\uff0c\u8dddMA120\u8fd8\u9700\u8dcc23%\u624d\u5230\u9006\u5411\u4e70\u70b9"}
+      },
+      {code:"sz300223",name:"\u5317\u4eac\u541b\u6b63",tier:"B",score:9,bull:3,bear:3,pe:144,peg:"0.71",mv:875,ind:"\u8f66\u8f7d\u5b58\u50a8\u82af\u7247",indStars:"\u2605\u2605\u2605\u2605",speed:"\u51cf\u901f",rev:"+13%",profit:"+3%",roe:"3.1%",cash:"\u7ecf\u8425\u73b0\u91d1\u6d416.2\u4ebf>\u51c0\u52393.8\u4ebf",
+        summary:"\u8f66\u8f7d\u5b58\u50a8\u82af\u7247\u9f99\u5934\uff0c\u5b58\u50a8\u6da8\u4ef7\u5468\u671f\u53d7\u76ca\u4f46ROE\u4ec53%+\u673a\u678420\u7b14\u6298\u4ef7\u5927\u5b97\u51cf\u6301",
+        verdict:"\u6700\u5206\u88c2\u6807\u7684\u2014\u2014\u4f30\u503c+\u8d22\u62a5+\u77ed\u7ebf\u504f\u591a vs \u4fe1\u53f7+\u4ea7\u4e1a+\u9006\u5411\u504f\u7a7a\u3002\u673a\u678420\u7b14\u6298\u4ef7\u5927\u5b97\u662f\u6781\u5ea6\u5371\u9669\u4fe1\u53f7\u3002",
+        details:{ind:"\u5168\u7403\u8f66\u89c4\u7ea7DRAM\u9690\u5f62\u51a0\u519b\uff0cAI\u5b58\u50a8\u8fdc\u671f\u9884\u671f",val:"Forward PEG 0.39\u6781\u4fbf\u5b9c\uff0c\u4f46\u76c8\u5229\u53ef\u6301\u7eed\u6027\u662f\u6838\u5fc3\u98ce\u9669",cap:"20\u7b14\u673a\u6784\u6298\u4ef7\u5927\u5b97(5%\u6298\u4ef7)\uff0c\u673a\u6784\u6025\u552e",fund:"\u51c0\u5229\u4ec5+3%\uff0cROE\u6781\u4f4e(3%)\uff0c\u5927\u91cf\u7814\u53d1\u538b\u5236\u5229\u6da6",short:"\u4eca\u65e5+7.45%\uff0c\u8d8b\u52bf\u7a33\u5065\uff0cMA5=166"}
+      },
+      {code:"sz002668",name:"TCL\u667a\u5bb6",tier:"B",score:8,bull:2,bear:4,pe:10,peg:"-",mv:207,ind:"\u51b0\u7bb1\u51fa\u6d77\u5236\u9020",indStars:"\u2605\u2605",speed:"\u51cf\u901f",rev:"+1%",profit:"+10%",roe:"37.7%(\u865a)",cash:"\u7ecf\u8425\u73b0\u91d1\u6d4125.5\u4ebf>\u51c0\u522921.4\u4ebf",
+        summary:"\u51b0\u7bb1\u51fa\u6d77\u9f99\u5934\uff0cPE\u4ec59.6\u500d13\u53ea\u4e2d\u6700\u4fbf\u5b9c\uff0c\u4f46\u8425\u6536\u505c\u6ede+ROE\u865a\u9ad8(\u9760\u6760\u6746)",
+        verdict:"\u4ec5\u4f30\u503c(PE\u4f4e)\u548c\u8d22\u62a5(\u73b0\u91d1\u725b)\u504f\u591a\u3002\u7eaf\u9632\u5fa1\u914d\u7f6e\uff0c\u4e0d\u9002\u5408\u4f5c\u4e3a\u6210\u957f\u6807\u7684\u3002\u589e\u957f\u5929\u82b1\u677f\u5df2\u73b0\u3002",
+        details:{ind:"\u51b0\u7bb1/\u6d17\u8863\u673a\u51fa\u53e3\u5236\u9020\uff0c\u6d77\u5916\u5e02\u573a\u5360\u6bd4\u9ad8",val:"PE 9.6\u500d\u84dd\u6807\u6700\u4f4e\uff0c\u7eaf\u9632\u5fa1",cap:"\u6210\u719f\u884c\u4e1a\u9f99\u5934\uff0c\u4f4e\u6ce2\u52a8",fund:"\u8425\u6536\u96f6\u589e\u957f\uff0cROE\u865a\u9ad837%\u9760\u8d1f\u503a\u7387",short:"\u5b8c\u5168\u4e0d\u9002\u7528\u4e8e\u77ed\u7ebf"}
+      },
+      {code:"sz002831",name:"\u88d5\u540c\u79d1\u6280",tier:"B",score:8,bull:3,bear:3,pe:25,peg:"-",mv:293,ind:"\u9ad8\u7aef\u5305\u88c5",indStars:"\u2605\u2605\u2605",speed:"\u51cf\u901f",rev:"+0.5%",profit:"+13%",roe:"13.6%",cash:"\u7ecf\u8425\u73b0\u91d1\u6d4127\u4ebf>\u51c0\u521915.8\u4ebf",
+        summary:"\u9ad8\u7aef\u5305\u88c5\u9f99\u5934\uff0cPE 25\u500d+ROE 14%+\u9ad8\u5206\u7ea2\uff0c\u9632\u5fa1\u914d\u7f6e\u9996\u9009\u4f46\u589e\u957f\u5929\u82b1\u677f\u5df2\u73b0",
+        verdict:"\u8d22\u62a5+\u4f30\u503c\u770b\u597d\u9632\u5fa1\u4ef7\u503c\uff0c\u4ea7\u4e1a\u770b\u5929\u82b1\u677f\u300210\u8f6c4\u6d3e8\u5143\u9ad8\u5206\u7ea2\u663e\u793a\u7ba1\u7406\u5c42\u53cb\u597d\u3002\u9002\u5408\u718a\u5e02\u8c03\u4ed3\u3002",
+        details:{ind:"\u82f9\u679c/\u8305\u53f0\u6838\u5fc3\u4f9b\u5e94\u5546\uff0c\u6d88\u8d39\u7535\u5b50\u5305\u88c5\u5347\u7ea7",val:"PE 25\u500d\uff0cROE 13.6%\u652f\u6491\u5f97\u4f4f",cap:"\u6210\u719f\u884c\u4e1a\uff0c\u673a\u6784\u7a33\u5b9a\u6301\u4ed3",fund:"\u8425\u6536\u505c\u6ede\u9760\u63a7\u8d39\u6324\u5229\u6da6\uff0c\u589e\u957f\u52a8\u529b\u4e0d\u8db3",short:"\u4e0d\u9002\u5408\u77ed\u7ebf\uff0c\u9632\u5fa1\u914d\u7f6e"}
+      },
+      {code:"sz300811",name:"\u94c2\u79d1\u65b0\u6750",tier:"C",score:7,bull:2,bear:4,pe:96,peg:"-",mv:233,ind:"\u91d1\u5c5e\u78c1\u6750",indStars:"\u2605\u2605\u2605",speed:"\u7a33\u5b9a",rev:"+8%",profit:"+11%",roe:"15.1%",cash:"\u7ecf\u8425\u73b0\u91d1\u6d413.5\u4ebf<\u51c0\u52394.3\u4ebf",
+        summary:"\u91d1\u5c5e\u78c1\u6750\u53d7\u76caAI\u7535\u611f\u9700\u6c42\uff0c\u6bdb\u523942%\u4f46\u8425\u6536\u589e\u901f\u964d\u81f38%+\u7ecf\u8425\u73b0\u91d1\u6d41\u4f4e\u4e8e\u51c0\u5229",
+        verdict:"\u77ed\u7ebf\u504f\u591a(\u8d8b\u52bf\u597d)\uff0c\u4ea7\u4e1a\u4e2d\u6027\uff0c\u4f30\u503c\u504f\u7a7a\u3002PE 96\u500d\u8d35\uff0c\u8425\u6536\u589e\u901f\u4ec58%\u96be\u4ee5\u6d88\u5316\u3002\u73b0\u91d1\u6d41\u8d28\u91cf\u4e0b\u964d\u3002",
+        details:{ind:"AI\u7b97\u529b\u82af\u7247\u7535\u611f\u6838\u5fc3\u4f9b\u5e94\u5546\uff0c\u91d1\u5c5e\u78c1\u6750\u56fd\u4ea7\u66ff\u4ee3",val:"PE 96\u500d\u8d35\uff0c\u8425\u6536\u589e\u901f\u4ec58%",cap:"233\u4ebf\u4e2d\u5c0f\u76d8\uff0c\u7b79\u7801\u5206\u6563",fund:"\u9ad8\u6bdb\u5229(42%)+\u9ad8ROE(15%)\uff0c\u4f46\u6210\u957f\u653e\u7f13",short:"\u4eca\u65e5+5.07%\u7a81\u7834\uff0cMA5=94"}
+      },
+      {code:"sz300346",name:"\u5357\u5927\u5149\u7535",tier:"C",score:6,bull:1,bear:5,pe:127,peg:"-",mv:364,ind:"\u534a\u5bfc\u4f53\u5149\u523b\u80f6",indStars:"\u2605\u2605\u2605",speed:"\u7a33\u5b9a",rev:"+10%",profit:"+18%",roe:"9.2%",cash:"\u7ecf\u8425\u73b0\u91d1\u6d417.3\u4ebf>\u51c0\u52394\u4ebf",
+        summary:"\u5149\u523b\u80f6+\u524d\u9a71\u4f53\u53cc\u8d5b\u9053\uff0c\u6bdb\u523940%+\u6263\u975e+31%\uff0c\u4f46\u4e3b\u529b20\u65e5\u6d41\u51fa28.75\u4ebf\u662f\u6700\u5927\u9690\u5fe7",
+        verdict:"\u8d44\u91d1\u9762\u7ea2\u65d7\u98d8\u98d8\uff0c\u4ec5\u4ea7\u4e1a\u7b56\u7565\u5e08\u770b\u597d\u8d5b\u9053\u3002\u903b\u8f91\u518d\u597d\u8d44\u91d1\u4e0d\u8ddf\u4e5f\u767d\u642d\u300220\u65e5-28.75\u4ebf\u662f\u5168\u5e02\u573a\u6700\u4e25\u91cd\u7684\u673a\u6784\u51fa\u9003\u4fe1\u53f7\u3002",
+        details:{ind:"ArF\u5149\u523b\u80f6+\u524d\u9a71\u4f53\u56fd\u4ea7\u66ff\u4ee3\u6838\u5fc3\u6807\u7684",val:"PE 127\u500d\u8d35\uff0c\u6263\u975e+31%\u4f46PEG\u4ecd\u7ea64",cap:"20\u65e5-28.75\u4ebf\uff0c\u5168\u5e02\u573a\u6700\u4e25\u91cd\u51fa\u9003",fund:"\u8425\u6536\u4e2a\u4f4d\u6570\u4f46\u6263\u975e+31%\u6838\u5fc3\u52a0\u901f",short:"\u975e\u4e3b\u7ebf\uff0c\u8d44\u91d1\u9762\u6781\u5dee"}
+      }
+    ];
+
+    function renderBlueAnalysis() {
+      const grid = document.getElementById("blueGrid");
+      if (!grid) return;
+
+      const allDimLabels = {
+        ind: "\u4ea7\u4e1a\u65b9\u5411", val: "\u4f30\u503c\u6c34\u4f4d", cap: "\u8d44\u91d1\u4fe1\u53f7", fund: "\u57fa\u672c\u9762", short: "\u77ed\u7ebf\u76d8\u9762"
+      };
+
+      grid.innerHTML = BLUE_DATA.map(s => {
+        const tierColor = {S:"#16a34a",A:"#2563eb",B:"#6b7280",C:"#d97706"}[s.tier] || "#6b7280";
+        return '<div class="blue-card tier-'+s.tier+'">'+
+          '<div class="blue-card-header">'+
+            '<div><div class="blue-card-name">'+s.name+' <span class="blue-card-code">'+s.code+'</span></div>'+
+            '<div style="font-size:0.72rem;color:#6b7280;">'+s.ind+' '+s.indStars+' | PE '+s.pe+' | PEG '+s.peg+' | '+s.mv+'\u4ebf</div></div>'+
+            '<span class="blue-card-tier '+s.tier+'">'+s.tier+'\u7ea7 | \u8d5e'+s.bull+'\u53cd'+s.bear+'</span>'+
+          '</div>'+
+          '<div class="blue-card-summary">\u201c'+s.summary+'\u201d</div>'+
+          '<div class="blue-card-stats">'+
+            '<span>\ud83d\udcc8 '+s.speed+' \u8425\u6536'+s.rev+' \u51c0\u5229'+s.profit+' ROE '+s.roe+'</span>'+
+            '<span>\ud83d\udcb0 '+s.cash+'</span>'+
+          '</div>'+
+          '<div class="blue-card-dim">'+
+            '<span class="dim-tag dim-tier-1" title="'+s.details.ind+'">\ud83c\udf0a '+s.details.ind+'</span>'+
+            '<span class="dim-tag dim-tier-3" title="'+s.details.val+'">\ud83e\uddee '+s.details.val+'</span>'+
+            '<span class="dim-tag dim-tier-4" title="'+s.details.cap+'">\ud83d\udce1 '+s.details.cap+'</span>'+
+            '<span class="dim-tag dim-tier-2" title="'+s.details.fund+'">\ud83d\udd2c '+s.details.fund+'</span>'+
+            '<span class="dim-tag dim-tier-3" title="'+s.details.short+'">\u26a1 '+s.details.short+'</span>'+
+          '</div>'+
+          '<div class="blue-card-verdict"><strong>\ud83d\udcac \u4e13\u5bb6\u7efc\u8ff0\uff1a</strong>'+s.verdict+'</div>'+
+        '</div>';
+      }).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderBlueAnalysis();
     });
   </script>
 </body>

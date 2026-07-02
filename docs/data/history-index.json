@@ -1,5 +1,13 @@
 [
   {
+    "date": "2026-07-01",
+    "totalCount": 130,
+    "markets": [
+      "创业板",
+      "深圳主板"
+    ]
+  },
+  {
     "date": "2026-06-30",
     "totalCount": 157,
     "markets": [

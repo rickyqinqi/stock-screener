@@ -268,6 +268,18 @@ async function main() {
 
   saveResults(result, targetDate);
 
+  // 自动运行五维度标签增强
+  const enrichScript = path.join(ROOT, 'scripts', 'enrich-analysis.py');
+  if (fs.existsSync(enrichScript)) {
+    console.log('\n[5/5] 运行五维度投研标签增强...');
+    try {
+      execSync(`python3 "${enrichScript}"`, { stdio: 'inherit', cwd: ROOT });
+      console.log('  五维度标签已添加');
+    } catch (e) {
+      console.log('  五维度标签增强跳过（Python未安装或脚本错误）');
+    }
+  }
+
   // 打印摘要
   console.log('\n========================================');
   console.log('  筛选结果摘要');

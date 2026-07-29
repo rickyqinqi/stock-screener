@@ -20,29 +20,7 @@
           "turnoverRate": 21.15,
           "volumeRatio": 1.02,
           "high52w": 30.16,
-          "low52w": 12.08,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE 20-35 合理",
-              "tier": 2
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
+          "low52w": 12.08
         },
         {
           "code": "sz002832",
@@ -58,29 +36,7 @@
           "turnoverRate": 8.89,
           "volumeRatio": 2.1,
           "high52w": 26.9,
-          "low52w": 14.04,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE 20-35 合理",
-              "tier": 2
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
+          "low52w": 14.04
         },
         {
           "code": "sz002003",
@@ -96,29 +52,7 @@
           "turnoverRate": 2.05,
           "volumeRatio": 1.51,
           "high52w": 11.59,
-          "low52w": 8.04,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE 20-35 合理",
-              "tier": 2
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
+          "low52w": 8.04
         },
         {
           "code": "sz000333",
@@ -134,29 +68,7 @@
           "turnoverRate": 0.69,
           "volumeRatio": 1.81,
           "high52w": 87.5,
-          "low52w": 65.67,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE<20 低估",
-              "tier": 1
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
+          "low52w": 65.67
         },
         {
           "code": "sz001965",
@@ -172,29 +84,7 @@
           "turnoverRate": 0.28,
           "volumeRatio": 1.4,
           "high52w": 11.51,
-          "low52w": 8.66,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE<20 低估",
-              "tier": 1
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
+          "low52w": 8.66
         },
         {
           "code": "sz003032",
@@ -210,29 +100,7 @@
           "turnoverRate": 3.74,
           "volumeRatio": 0.62,
           "high52w": 7.61,
-          "low52w": 4.89,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "⚠️ 亏损不可估值",
-              "tier": 5
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
+          "low52w": 4.89
         },
         {
           "code": "sz002958",
@@ -248,29 +116,7 @@
           "turnoverRate": 1.58,
           "volumeRatio": 1.21,
           "high52w": 3.49,
-          "low52w": 2.6,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE<20 低估",
-              "tier": 1
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
+          "low52w": 2.6
         },
         {
           "code": "sz002345",
@@ -286,29 +132,7 @@
           "turnoverRate": 3.15,
           "volumeRatio": 1.03,
           "high52w": 17.23,
-          "low52w": 8.37,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE<20 低估",
-              "tier": 1
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
+          "low52w": 8.37
         },
         {
           "code": "sz002293",
@@ -324,29 +148,7 @@
           "turnoverRate": 0.99,
           "volumeRatio": 0.75,
           "high52w": 11.85,
-          "low52w": 7.38,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE<20 低估",
-              "tier": 1
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
+          "low52w": 7.38
         },
         {
           "code": "sz002563",
@@ -362,29 +164,7 @@
           "turnoverRate": 1.37,
           "volumeRatio": 1.31,
           "high52w": 6.53,
-          "low52w": 4.86,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE<20 低估",
-              "tier": 1
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
+          "low52w": 4.86
         },
         {
           "code": "sz000651",
@@ -400,29 +180,7 @@
           "turnoverRate": 1.35,
           "volumeRatio": 1.81,
           "high52w": 45.36,
-          "low52w": 36.27,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE<20 低估",
-              "tier": 1
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
+          "low52w": 36.27
         },
         {
           "code": "sz001328",
@@ -438,29 +196,7 @@
           "turnoverRate": 2.08,
           "volumeRatio": 1.11,
           "high52w": 45.95,
-          "low52w": 24.3,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE 20-35 合理",
-              "tier": 2
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
+          "low52w": 24.3
         },
         {
           "code": "sz000001",
@@ -476,29 +212,7 @@
           "turnoverRate": 0.78,
           "volumeRatio": 1.43,
           "high52w": 12.04,
-          "low52w": 9.99,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE<20 低估",
-              "tier": 1
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
+          "low52w": 9.99
         },
         {
           "code": "sz002839",
@@ -514,29 +228,7 @@
           "turnoverRate": 1.6,
           "volumeRatio": 1.47,
           "high52w": 4.78,
-          "low52w": 3.87,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE<20 低估",
-              "tier": 1
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
+          "low52w": 3.87
         },
         {
           "code": "sz000719",
@@ -552,29 +244,7 @@
           "turnoverRate": 1,
           "volumeRatio": 1.28,
           "high52w": 13.93,
-          "low52w": 10.36,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE<20 低估",
-              "tier": 1
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
+          "low52w": 10.36
         },
         {
           "code": "sz002078",
@@ -590,29 +260,7 @@
           "turnoverRate": 0.88,
           "volumeRatio": 1.33,
           "high52w": 17.48,
-          "low52w": 11.61,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE<20 低估",
-              "tier": 1
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
+          "low52w": 11.61
         }
       ],
       "count": 16
@@ -634,29 +282,7 @@
           "turnoverRate": 17.25,
           "volumeRatio": 1.6,
           "high52w": 77.81,
-          "low52w": 30.86,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "🔴 PE>150 极贵",
-              "tier": 5
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
+          "low52w": 30.86
         },
         {
           "code": "sz301108",
@@ -672,29 +298,7 @@
           "turnoverRate": 7.92,
           "volumeRatio": 1.48,
           "high52w": 39.28,
-          "low52w": 21.23,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "⚠️ PE 35-60 偏高",
-              "tier": 3
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
+          "low52w": 21.23
         },
         {
           "code": "sz301033",
@@ -710,29 +314,7 @@
           "turnoverRate": 6.39,
           "volumeRatio": 1.84,
           "high52w": 91.8,
-          "low52w": 44.88,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "⚠️ PE 35-60 偏高",
-              "tier": 3
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
+          "low52w": 44.88
         },
         {
           "code": "sz301381",
@@ -748,29 +330,7 @@
           "turnoverRate": 2.25,
           "volumeRatio": 0.83,
           "high52w": 26.13,
-          "low52w": 16.53,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE 20-35 合理",
-              "tier": 2
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
+          "low52w": 16.53
         },
         {
           "code": "sz300138",
@@ -786,29 +346,7 @@
           "turnoverRate": 5.27,
           "volumeRatio": 2.96,
           "high52w": 15.5,
-          "low52w": 8.71,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE<20 低估",
-              "tier": 1
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
+          "low52w": 8.71
         },
         {
           "code": "sz300654",
@@ -824,29 +362,7 @@
           "turnoverRate": 7.29,
           "volumeRatio": 1.54,
           "high52w": 13.86,
-          "low52w": 8.71,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "🔴 PE>150 极贵",
-              "tier": 5
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
+          "low52w": 8.71
         }
       ],
       "count": 6
@@ -1205,45 +721,5 @@
       "high52w": 12.04,
       "low52w": 9.99
     }
-  ],
-  "roundtableVotes": {
-    "date": "2026-06-18",
-    "summary": "方向对、时机偏晚、资金面背离",
-    "votes": {
-      "偏空/观望": 4,
-      "选择性偏多": 2
-    },
-    "experts": [
-      {
-        "name": "产业策略师 · 星望远",
-        "stance": "偏空",
-        "reason": "过半仓等回调"
-      },
-      {
-        "name": "信号派首席 · 洲四方",
-        "stance": "偏空",
-        "reason": "资金面红灯"
-      },
-      {
-        "name": "估值分析师 · 文衡价",
-        "stance": "偏空",
-        "reason": "涨的是PE不是EPS"
-      },
-      {
-        "name": "逆向投资人 · 坤候底",
-        "stance": "偏空",
-        "reason": "无一满足买入框架"
-      },
-      {
-        "name": "财报研究员 · 钊审财",
-        "stance": "选择性偏多",
-        "reason": "业绩好的可持有"
-      },
-      {
-        "name": "短线冲浪手 · 磊追浪",
-        "stance": "选择性偏多",
-        "reason": "主升浪中期鱼尾行情"
-      }
-    ]
-  }
+  ]
 }

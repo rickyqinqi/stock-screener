@@ -1,72 +1,34 @@
 {
-  "date": "2026-07-28",
-  "generatedAt": "2026-07-29T12:05:18.261Z",
-  "totalCount": 22,
+  "date": "2026-07-29",
+  "generatedAt": "2026-07-30T11:55:35.906Z",
+  "totalCount": 3,
   "markets": {
     "深圳主板": {
       "type": "sz_main",
       "stocks": [
         {
-          "code": "sz001248",
-          "name": "华润新能源",
+          "code": "sz002141",
+          "name": "贤丰控股",
           "market": "深圳主板",
           "marketSubType": "sz_main",
-          "price": 13.94,
-          "changePct": -2.31,
-          "chg60d": 37.88,
-          "pe": 33.74,
-          "pb": 1.59,
-          "totalMv": 1812.97,
-          "turnoverRate": 21.15,
-          "volumeRatio": 1.02,
-          "high52w": 30.16,
-          "low52w": 12.08,
+          "price": 5.67,
+          "changePct": -10,
+          "chg60d": 53.24,
+          "pe": 512.32,
+          "pb": 7.26,
+          "totalMv": 58.57,
+          "turnoverRate": 31.95,
+          "volumeRatio": 1.22,
+          "high52w": 6.5,
+          "low52w": 2.98,
           "dimensions": {
             "industry": {
-              "label": "其他/待分类",
+              "label": "漆包线/微特电机",
               "tier": 5
             },
             "valuation": {
-              "label": "✅ PE 20-35 合理",
-              "tier": 2
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
-        },
-        {
-          "code": "sz002832",
-          "name": "比音勒芬",
-          "market": "深圳主板",
-          "marketSubType": "sz_main",
-          "price": 24.28,
-          "changePct": -4.22,
-          "chg60d": 24.26,
-          "pe": 22.88,
-          "pb": 2.6,
-          "totalMv": 138.57,
-          "turnoverRate": 8.89,
-          "volumeRatio": 2.1,
-          "high52w": 26.9,
-          "low52w": 14.04,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
+              "label": "🔴 PE>150 极贵",
               "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE 20-35 合理",
-              "tier": 2
             },
             "capital": {
               "label": "未单独分析",
@@ -87,14 +49,14 @@
           "name": "伟星股份",
           "market": "深圳主板",
           "marketSubType": "sz_main",
-          "price": 10.83,
-          "changePct": 2.46,
-          "chg60d": 12.81,
-          "pe": 20.2,
-          "pb": 3.07,
-          "totalMv": 128.76,
-          "turnoverRate": 2.05,
-          "volumeRatio": 1.51,
+          "price": 10.87,
+          "changePct": 0.37,
+          "chg60d": 16.63,
+          "pe": 20.28,
+          "pb": 3.08,
+          "totalMv": 129.23,
+          "turnoverRate": 1.99,
+          "volumeRatio": 1.31,
           "high52w": 11.59,
           "low52w": 8.04,
           "dimensions": {
@@ -121,476 +83,20 @@
           }
         },
         {
-          "code": "sz000333",
-          "name": "美的集团",
+          "code": "sz002807",
+          "name": "江阴银行",
           "market": "深圳主板",
           "marketSubType": "sz_main",
-          "price": 87.01,
-          "changePct": 1.92,
-          "chg60d": 12.45,
-          "pe": 15.01,
-          "pb": 3.25,
-          "totalMv": 6635.58,
-          "turnoverRate": 0.69,
-          "volumeRatio": 1.81,
-          "high52w": 87.5,
-          "low52w": 65.67,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE<20 低估",
-              "tier": 1
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
-        },
-        {
-          "code": "sz001965",
-          "name": "招商公路",
-          "market": "深圳主板",
-          "marketSubType": "sz_main",
-          "price": 10.56,
-          "changePct": 0.57,
-          "chg60d": 12.34,
-          "pe": 15.5,
-          "pb": 1.02,
-          "totalMv": 717.56,
-          "turnoverRate": 0.28,
-          "volumeRatio": 1.4,
-          "high52w": 11.51,
-          "low52w": 8.66,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE<20 低估",
-              "tier": 1
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
-        },
-        {
-          "code": "sz003032",
-          "name": "传智教育",
-          "market": "深圳主板",
-          "marketSubType": "sz_main",
-          "price": 7.28,
-          "changePct": 9.97,
-          "chg60d": 11.31,
-          "pe": -35.03,
-          "pb": 2.5,
-          "totalMv": 29.3,
-          "turnoverRate": 3.74,
-          "volumeRatio": 0.62,
-          "high52w": 7.61,
-          "low52w": 4.89,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "⚠️ 亏损不可估值",
-              "tier": 5
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
-        },
-        {
-          "code": "sz002958",
-          "name": "青农商行",
-          "market": "深圳主板",
-          "marketSubType": "sz_main",
-          "price": 3.09,
-          "changePct": 1.98,
-          "chg60d": 5.82,
-          "pe": 5.37,
-          "pb": 0.46,
-          "totalMv": 171.67,
-          "turnoverRate": 1.58,
-          "volumeRatio": 1.21,
-          "high52w": 3.49,
-          "low52w": 2.6,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE<20 低估",
-              "tier": 1
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
-        },
-        {
-          "code": "sz002345",
-          "name": "潮宏基",
-          "market": "深圳主板",
-          "marketSubType": "sz_main",
-          "price": 10.66,
-          "changePct": 2.4,
-          "chg60d": 4.31,
-          "pe": 16.57,
-          "pb": 2.55,
-          "totalMv": 94.72,
-          "turnoverRate": 3.15,
-          "volumeRatio": 1.03,
-          "high52w": 17.23,
-          "low52w": 8.37,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE<20 低估",
-              "tier": 1
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
-        },
-        {
-          "code": "sz002293",
-          "name": "罗莱生活",
-          "market": "深圳主板",
-          "marketSubType": "sz_main",
-          "price": 11.29,
-          "changePct": -0.96,
-          "chg60d": 4.15,
-          "pe": 17.05,
-          "pb": 2.37,
-          "totalMv": 94.52,
-          "turnoverRate": 0.99,
-          "volumeRatio": 0.75,
-          "high52w": 11.85,
-          "low52w": 7.38,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE<20 低估",
-              "tier": 1
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
-        },
-        {
-          "code": "sz002563",
-          "name": "森马服饰",
-          "market": "深圳主板",
-          "marketSubType": "sz_main",
-          "price": 6.15,
-          "changePct": 3.02,
-          "chg60d": 4.06,
-          "pe": 16.75,
-          "pb": 1.47,
-          "totalMv": 165.69,
-          "turnoverRate": 1.37,
-          "volumeRatio": 1.31,
-          "high52w": 6.53,
-          "low52w": 4.86,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE<20 低估",
-              "tier": 1
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
-        },
-        {
-          "code": "sz000651",
-          "name": "格力电器",
-          "market": "深圳主板",
-          "marketSubType": "sz_main",
-          "price": 41.65,
-          "changePct": 2.08,
-          "chg60d": 4,
-          "pe": 7.99,
-          "pb": 1.53,
-          "totalMv": 2332.99,
-          "turnoverRate": 1.35,
-          "volumeRatio": 1.81,
-          "high52w": 45.36,
-          "low52w": 36.27,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE<20 低估",
-              "tier": 1
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
-        },
-        {
-          "code": "sz001328",
-          "name": "登康口腔",
-          "market": "深圳主板",
-          "marketSubType": "sz_main",
-          "price": 32.08,
-          "changePct": 0.82,
-          "chg60d": 3.65,
-          "pe": 29.11,
-          "pb": 3.87,
-          "totalMv": 55.23,
-          "turnoverRate": 2.08,
-          "volumeRatio": 1.11,
-          "high52w": 45.95,
-          "low52w": 24.3,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE 20-35 合理",
-              "tier": 2
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
-        },
-        {
-          "code": "sz000001",
-          "name": "平安银行",
-          "market": "深圳主板",
-          "marketSubType": "sz_main",
-          "price": 11.28,
-          "changePct": 0.71,
-          "chg60d": 1.35,
-          "pe": 5.08,
-          "pb": 0.48,
-          "totalMv": 2188.99,
-          "turnoverRate": 0.78,
-          "volumeRatio": 1.43,
-          "high52w": 12.04,
-          "low52w": 9.99,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE<20 低估",
-              "tier": 1
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
-        },
-        {
-          "code": "sz002839",
-          "name": "张家港行",
-          "market": "深圳主板",
-          "marketSubType": "sz_main",
-          "price": 4.49,
-          "changePct": 2.05,
-          "chg60d": 1.13,
-          "pe": 5.51,
-          "pb": 0.58,
-          "totalMv": 109.75,
-          "turnoverRate": 1.6,
-          "volumeRatio": 1.47,
-          "high52w": 4.78,
-          "low52w": 3.87,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE<20 低估",
-              "tier": 1
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
-        },
-        {
-          "code": "sz000719",
-          "name": "中原传媒",
-          "market": "深圳主板",
-          "marketSubType": "sz_main",
-          "price": 12.8,
-          "changePct": 2.07,
-          "chg60d": 0.31,
-          "pe": 9.51,
-          "pb": 1.12,
-          "totalMv": 130.97,
-          "turnoverRate": 1,
-          "volumeRatio": 1.28,
-          "high52w": 13.93,
-          "low52w": 10.36,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE<20 低估",
-              "tier": 1
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
-        },
-        {
-          "code": "sz002078",
-          "name": "太阳纸业",
-          "market": "深圳主板",
-          "marketSubType": "sz_main",
-          "price": 14.52,
-          "changePct": 0.48,
-          "chg60d": 0.07,
-          "pe": 12.41,
-          "pb": 1.32,
-          "totalMv": 405.77,
-          "turnoverRate": 0.88,
-          "volumeRatio": 1.33,
-          "high52w": 17.48,
-          "low52w": 11.61,
+          "price": 4.12,
+          "changePct": 1.73,
+          "chg60d": 2.77,
+          "pe": 5.42,
+          "pb": 0.57,
+          "totalMv": 111.55,
+          "turnoverRate": 2.17,
+          "volumeRatio": 1.49,
+          "high52w": 4.7,
+          "low52w": 3.65,
           "dimensions": {
             "industry": {
               "label": "其他/待分类",
@@ -615,595 +121,57 @@
           }
         }
       ],
-      "count": 16
-    },
-    "创业板": {
-      "type": "sz_cyb",
-      "stocks": [
-        {
-          "code": "sz301234",
-          "name": "五洲医疗",
-          "market": "创业板",
-          "marketSubType": "sz_cyb",
-          "price": 67.89,
-          "changePct": -12.68,
-          "chg60d": 64.7,
-          "pe": 216.64,
-          "pb": 6.11,
-          "totalMv": 46.17,
-          "turnoverRate": 17.25,
-          "volumeRatio": 1.6,
-          "high52w": 77.81,
-          "low52w": 30.86,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "🔴 PE>150 极贵",
-              "tier": 5
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
-        },
-        {
-          "code": "sz301108",
-          "name": "洁雅股份",
-          "market": "创业板",
-          "marketSubType": "sz_cyb",
-          "price": 34.28,
-          "changePct": 4.67,
-          "chg60d": 26.4,
-          "pe": 49.8,
-          "pb": 2.05,
-          "totalMv": 38.58,
-          "turnoverRate": 7.92,
-          "volumeRatio": 1.48,
-          "high52w": 39.28,
-          "low52w": 21.23,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "⚠️ PE 35-60 偏高",
-              "tier": 3
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
-        },
-        {
-          "code": "sz301033",
-          "name": "迈普医学",
-          "market": "创业板",
-          "marketSubType": "sz_cyb",
-          "price": 61.94,
-          "changePct": 5.3,
-          "chg60d": 13.94,
-          "pe": 37.86,
-          "pb": 5.37,
-          "totalMv": 41.53,
-          "turnoverRate": 6.39,
-          "volumeRatio": 1.84,
-          "high52w": 91.8,
-          "low52w": 44.88,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "⚠️ PE 35-60 偏高",
-              "tier": 3
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
-        },
-        {
-          "code": "sz301381",
-          "name": "赛维时代",
-          "market": "创业板",
-          "marketSubType": "sz_cyb",
-          "price": 23.27,
-          "changePct": 2.2,
-          "chg60d": 13.68,
-          "pe": 33.96,
-          "pb": 3.46,
-          "totalMv": 94.59,
-          "turnoverRate": 2.25,
-          "volumeRatio": 0.83,
-          "high52w": 26.13,
-          "low52w": 16.53,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE 20-35 合理",
-              "tier": 2
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
-        },
-        {
-          "code": "sz300138",
-          "name": "晨光生物",
-          "market": "创业板",
-          "marketSubType": "sz_cyb",
-          "price": 11.4,
-          "changePct": 4.2,
-          "chg60d": 1.51,
-          "pe": 15.47,
-          "pb": 1.66,
-          "totalMv": 55.07,
-          "turnoverRate": 5.27,
-          "volumeRatio": 2.96,
-          "high52w": 15.5,
-          "low52w": 8.71,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "✅ PE<20 低估",
-              "tier": 1
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
-        },
-        {
-          "code": "sz300654",
-          "name": "世纪天鸿",
-          "market": "创业板",
-          "marketSubType": "sz_cyb",
-          "price": 11.05,
-          "changePct": -6.83,
-          "chg60d": 1.28,
-          "pe": 160.58,
-          "pb": 4.82,
-          "totalMv": 40.46,
-          "turnoverRate": 7.29,
-          "volumeRatio": 1.54,
-          "high52w": 13.86,
-          "low52w": 8.71,
-          "dimensions": {
-            "industry": {
-              "label": "其他/待分类",
-              "tier": 5
-            },
-            "valuation": {
-              "label": "🔴 PE>150 极贵",
-              "tier": 5
-            },
-            "capital": {
-              "label": "未单独分析",
-              "tier": 3
-            },
-            "fundamental": {
-              "label": "未深入分析",
-              "tier": 3
-            },
-            "shortTerm": {
-              "label": "非本周主线标的",
-              "tier": 3
-            }
-          }
-        }
-      ],
-      "count": 6
+      "count": 3
     }
   },
   "stocks": [
-    {
-      "code": "sz002078",
-      "name": "太阳纸业",
-      "market": "深圳主板",
-      "marketSubType": "sz_main",
-      "price": 14.52,
-      "changePct": 0.48,
-      "chg60d": 0.07,
-      "pe": 12.41,
-      "pb": 1.32,
-      "totalMv": 405.77,
-      "turnoverRate": 0.88,
-      "volumeRatio": 1.33,
-      "high52w": 17.48,
-      "low52w": 11.61
-    },
-    {
-      "code": "sz300654",
-      "name": "世纪天鸿",
-      "market": "创业板",
-      "marketSubType": "sz_cyb",
-      "price": 11.05,
-      "changePct": -6.83,
-      "chg60d": 1.28,
-      "pe": 160.58,
-      "pb": 4.82,
-      "totalMv": 40.46,
-      "turnoverRate": 7.29,
-      "volumeRatio": 1.54,
-      "high52w": 13.86,
-      "low52w": 8.71
-    },
-    {
-      "code": "sz300138",
-      "name": "晨光生物",
-      "market": "创业板",
-      "marketSubType": "sz_cyb",
-      "price": 11.4,
-      "changePct": 4.2,
-      "chg60d": 1.51,
-      "pe": 15.47,
-      "pb": 1.66,
-      "totalMv": 55.07,
-      "turnoverRate": 5.27,
-      "volumeRatio": 2.96,
-      "high52w": 15.5,
-      "low52w": 8.71
-    },
-    {
-      "code": "sz002958",
-      "name": "青农商行",
-      "market": "深圳主板",
-      "marketSubType": "sz_main",
-      "price": 3.09,
-      "changePct": 1.98,
-      "chg60d": 5.82,
-      "pe": 5.37,
-      "pb": 0.46,
-      "totalMv": 171.67,
-      "turnoverRate": 1.58,
-      "volumeRatio": 1.21,
-      "high52w": 3.49,
-      "low52w": 2.6
-    },
-    {
-      "code": "sz000651",
-      "name": "格力电器",
-      "market": "深圳主板",
-      "marketSubType": "sz_main",
-      "price": 41.65,
-      "changePct": 2.08,
-      "chg60d": 4,
-      "pe": 7.99,
-      "pb": 1.53,
-      "totalMv": 2332.99,
-      "turnoverRate": 1.35,
-      "volumeRatio": 1.81,
-      "high52w": 45.36,
-      "low52w": 36.27
-    },
-    {
-      "code": "sz003032",
-      "name": "传智教育",
-      "market": "深圳主板",
-      "marketSubType": "sz_main",
-      "price": 7.28,
-      "changePct": 9.97,
-      "chg60d": 11.31,
-      "pe": -35.03,
-      "pb": 2.5,
-      "totalMv": 29.3,
-      "turnoverRate": 3.74,
-      "volumeRatio": 0.62,
-      "high52w": 7.61,
-      "low52w": 4.89
-    },
-    {
-      "code": "sz002563",
-      "name": "森马服饰",
-      "market": "深圳主板",
-      "marketSubType": "sz_main",
-      "price": 6.15,
-      "changePct": 3.02,
-      "chg60d": 4.06,
-      "pe": 16.75,
-      "pb": 1.47,
-      "totalMv": 165.69,
-      "turnoverRate": 1.37,
-      "volumeRatio": 1.31,
-      "high52w": 6.53,
-      "low52w": 4.86
-    },
-    {
-      "code": "sz002832",
-      "name": "比音勒芬",
-      "market": "深圳主板",
-      "marketSubType": "sz_main",
-      "price": 24.28,
-      "changePct": -4.22,
-      "chg60d": 24.26,
-      "pe": 22.88,
-      "pb": 2.6,
-      "totalMv": 138.57,
-      "turnoverRate": 8.89,
-      "volumeRatio": 2.1,
-      "high52w": 26.9,
-      "low52w": 14.04
-    },
-    {
-      "code": "sz301108",
-      "name": "洁雅股份",
-      "market": "创业板",
-      "marketSubType": "sz_cyb",
-      "price": 34.28,
-      "changePct": 4.67,
-      "chg60d": 26.4,
-      "pe": 49.8,
-      "pb": 2.05,
-      "totalMv": 38.58,
-      "turnoverRate": 7.92,
-      "volumeRatio": 1.48,
-      "high52w": 39.28,
-      "low52w": 21.23
-    },
-    {
-      "code": "sz002293",
-      "name": "罗莱生活",
-      "market": "深圳主板",
-      "marketSubType": "sz_main",
-      "price": 11.29,
-      "changePct": -0.96,
-      "chg60d": 4.15,
-      "pe": 17.05,
-      "pb": 2.37,
-      "totalMv": 94.52,
-      "turnoverRate": 0.99,
-      "volumeRatio": 0.75,
-      "high52w": 11.85,
-      "low52w": 7.38
-    },
-    {
-      "code": "sz000333",
-      "name": "美的集团",
-      "market": "深圳主板",
-      "marketSubType": "sz_main",
-      "price": 87.01,
-      "changePct": 1.92,
-      "chg60d": 12.45,
-      "pe": 15.01,
-      "pb": 3.25,
-      "totalMv": 6635.58,
-      "turnoverRate": 0.69,
-      "volumeRatio": 1.81,
-      "high52w": 87.5,
-      "low52w": 65.67
-    },
     {
       "code": "sz002003",
       "name": "伟星股份",
       "market": "深圳主板",
       "marketSubType": "sz_main",
-      "price": 10.83,
-      "changePct": 2.46,
-      "chg60d": 12.81,
-      "pe": 20.2,
-      "pb": 3.07,
-      "totalMv": 128.76,
-      "turnoverRate": 2.05,
-      "volumeRatio": 1.51,
+      "price": 10.87,
+      "changePct": 0.37,
+      "chg60d": 16.63,
+      "pe": 20.28,
+      "pb": 3.08,
+      "totalMv": 129.23,
+      "turnoverRate": 1.99,
+      "volumeRatio": 1.31,
       "high52w": 11.59,
       "low52w": 8.04
     },
     {
-      "code": "sz002839",
-      "name": "张家港行",
+      "code": "sz002807",
+      "name": "江阴银行",
       "market": "深圳主板",
       "marketSubType": "sz_main",
-      "price": 4.49,
-      "changePct": 2.05,
-      "chg60d": 1.13,
-      "pe": 5.51,
-      "pb": 0.58,
-      "totalMv": 109.75,
-      "turnoverRate": 1.6,
-      "volumeRatio": 1.47,
-      "high52w": 4.78,
-      "low52w": 3.87
+      "price": 4.12,
+      "changePct": 1.73,
+      "chg60d": 2.77,
+      "pe": 5.42,
+      "pb": 0.57,
+      "totalMv": 111.55,
+      "turnoverRate": 2.17,
+      "volumeRatio": 1.49,
+      "high52w": 4.7,
+      "low52w": 3.65
     },
     {
-      "code": "sz001328",
-      "name": "登康口腔",
+      "code": "sz002141",
+      "name": "贤丰控股",
       "market": "深圳主板",
       "marketSubType": "sz_main",
-      "price": 32.08,
-      "changePct": 0.82,
-      "chg60d": 3.65,
-      "pe": 29.11,
-      "pb": 3.87,
-      "totalMv": 55.23,
-      "turnoverRate": 2.08,
-      "volumeRatio": 1.11,
-      "high52w": 45.95,
-      "low52w": 24.3
-    },
-    {
-      "code": "sz301381",
-      "name": "赛维时代",
-      "market": "创业板",
-      "marketSubType": "sz_cyb",
-      "price": 23.27,
-      "changePct": 2.2,
-      "chg60d": 13.68,
-      "pe": 33.96,
-      "pb": 3.46,
-      "totalMv": 94.59,
-      "turnoverRate": 2.25,
-      "volumeRatio": 0.83,
-      "high52w": 26.13,
-      "low52w": 16.53
-    },
-    {
-      "code": "sz001248",
-      "name": "华润新能源",
-      "market": "深圳主板",
-      "marketSubType": "sz_main",
-      "price": 13.94,
-      "changePct": -2.31,
-      "chg60d": 37.88,
-      "pe": 33.74,
-      "pb": 1.59,
-      "totalMv": 1812.97,
-      "turnoverRate": 21.15,
-      "volumeRatio": 1.02,
-      "high52w": 30.16,
-      "low52w": 12.08
-    },
-    {
-      "code": "sz001965",
-      "name": "招商公路",
-      "market": "深圳主板",
-      "marketSubType": "sz_main",
-      "price": 10.56,
-      "changePct": 0.57,
-      "chg60d": 12.34,
-      "pe": 15.5,
-      "pb": 1.02,
-      "totalMv": 717.56,
-      "turnoverRate": 0.28,
-      "volumeRatio": 1.4,
-      "high52w": 11.51,
-      "low52w": 8.66
-    },
-    {
-      "code": "sz002345",
-      "name": "潮宏基",
-      "market": "深圳主板",
-      "marketSubType": "sz_main",
-      "price": 10.66,
-      "changePct": 2.4,
-      "chg60d": 4.31,
-      "pe": 16.57,
-      "pb": 2.55,
-      "totalMv": 94.72,
-      "turnoverRate": 3.15,
-      "volumeRatio": 1.03,
-      "high52w": 17.23,
-      "low52w": 8.37
-    },
-    {
-      "code": "sz000719",
-      "name": "中原传媒",
-      "market": "深圳主板",
-      "marketSubType": "sz_main",
-      "price": 12.8,
-      "changePct": 2.07,
-      "chg60d": 0.31,
-      "pe": 9.51,
-      "pb": 1.12,
-      "totalMv": 130.97,
-      "turnoverRate": 1,
-      "volumeRatio": 1.28,
-      "high52w": 13.93,
-      "low52w": 10.36
-    },
-    {
-      "code": "sz301234",
-      "name": "五洲医疗",
-      "market": "创业板",
-      "marketSubType": "sz_cyb",
-      "price": 67.89,
-      "changePct": -12.68,
-      "chg60d": 64.7,
-      "pe": 216.64,
-      "pb": 6.11,
-      "totalMv": 46.17,
-      "turnoverRate": 17.25,
-      "volumeRatio": 1.6,
-      "high52w": 77.81,
-      "low52w": 30.86
-    },
-    {
-      "code": "sz301033",
-      "name": "迈普医学",
-      "market": "创业板",
-      "marketSubType": "sz_cyb",
-      "price": 61.94,
-      "changePct": 5.3,
-      "chg60d": 13.94,
-      "pe": 37.86,
-      "pb": 5.37,
-      "totalMv": 41.53,
-      "turnoverRate": 6.39,
-      "volumeRatio": 1.84,
-      "high52w": 91.8,
-      "low52w": 44.88
-    },
-    {
-      "code": "sz000001",
-      "name": "平安银行",
-      "market": "深圳主板",
-      "marketSubType": "sz_main",
-      "price": 11.28,
-      "changePct": 0.71,
-      "chg60d": 1.35,
-      "pe": 5.08,
-      "pb": 0.48,
-      "totalMv": 2188.99,
-      "turnoverRate": 0.78,
-      "volumeRatio": 1.43,
-      "high52w": 12.04,
-      "low52w": 9.99
+      "price": 5.67,
+      "changePct": -10,
+      "chg60d": 53.24,
+      "pe": 512.32,
+      "pb": 7.26,
+      "totalMv": 58.57,
+      "turnoverRate": 31.95,
+      "volumeRatio": 1.22,
+      "high52w": 6.5,
+      "low52w": 2.98
     }
   ],
   "roundtableVotes": {
